@@ -7,14 +7,14 @@ import { CardBack } from  'components';
 
 const StyledProduct = styled.li`
     display: block; 
-    width: ${rem(320)};
+    width: 100%;
     color: #fff;
     margin: 0 auto ${rem(24)};
     ${media.tablet`
-        margin-right: 0;
-        margin-left: 0;
+        width: ${rem(320)};
         &:nth-child(3n + 1) {margin-right: calc(50% - ${rem(320)}/2); margin-left: calc(50% - ${rem(320)}/2)};
-        &:nth-child(3n) {margin-left: auto};`
+        &:nth-child(2n) {margin-right: auto; margin-left: 0;};
+        &:nth-child(3n) {margin-left: auto; margin-right: 0};`
     }
     ${media.desktop`
         margin: 0 ${rem(80)} ${rem(24)} 0; 
@@ -127,8 +127,8 @@ const ImgWrap = styled.span`
     width: calc(100% - ${rem(8)});
     height: ${rem(273)};
     margin: ${rem(4)};
-    border-bottom-right-radius: ${rem(12)};
-    border-bottom-left-radius: ${rem(12)};
+    border-bottom-right-radius: ${rem(6)};
+    border-bottom-left-radius: ${rem(6)};
 `;
 
 const Img = styled.img.attrs({
