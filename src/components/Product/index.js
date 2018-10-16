@@ -8,11 +8,11 @@ import { CardBack } from  'components';
 const StyledProduct = styled.li`
     display: block; 
     width: 100%;
-    color: #fff;
-    margin: 0 auto ${rem(24)};
+    color: ${theme.color.white};;
+    margin: 0 auto ${rem(36)};
     ${media.tablet`
         width: ${rem(320)};
-        &:nth-child(3n + 1) {margin-right: calc(50% - ${rem(320)}/2); margin-left: calc(50% - ${rem(320)}/2)};
+        &:nth-child(3n + 1) {margin-right: calc(50% - ${rem(160)}); margin-left: calc(50% - ${rem(160)})};
         &:nth-child(2n) {margin-right: auto; margin-left: 0;};
         &:nth-child(3n) {margin-left: auto; margin-right: 0};`
     }
@@ -52,7 +52,7 @@ const Description = styled.span`
     padding-top: ${rem(14)};
     text-align: center;
     text-shadow: 0 1px 0 #000;
-    color: ${props => props.isDisabled ? '#ffff66' : '#fff'};
+    color: ${props => props.isDisabled ? theme.color.descriptionDisabled : theme.color.white};
     font-size: ${rem(13)};
     font-weight: 400;
     line-height: ${rem(16)};
@@ -79,7 +79,7 @@ const Brand = styled.span`
     display: block;
     margin-bottom: ${rem(4)};
     margin-left:  ${rem(-2)};
-    color: ${props => props.isDisabled ? '#b3b3b3' : '#000'};
+    color: ${props => props.isDisabled ? theme.color.disabled : theme.color.black};
     opacity: ${props => props.isDisabled ? .5 : 1};
     font-size: ${rem(48)};
     font-weight: 700;
@@ -89,7 +89,7 @@ const Brand = styled.span`
 const Name = styled.span`
     display: block;
     margin-bottom: ${rem(18)};
-    color: ${props => props.isDisabled ? '#b3b3b3' : '#000'};
+    color: ${props => props.isDisabled ? theme.color.disabled : theme.color.black};
     opacity: ${props => props.isDisabled ? .5 : 1};
     font-size: ${rem(24)};
     font-weight: 700;
@@ -102,7 +102,7 @@ const Info = styled.span`
 
 const Text = styled.span`
     display: block;
-    color: ${props => props.isDisabled ? '#b3b3b3' : '#666'};
+    color: ${props => props.isDisabled ? theme.color.disabled : theme.color.textDefault};
     opacity: ${props => props.isDisabled ? .5 : 1};
     font-size: ${rem(14)};
     font-weight: 400;
@@ -152,7 +152,7 @@ const Weight = styled.span`
     justify-content: center;
     width: ${rem(81)};
     height: ${rem(81)};
-    color: #fff;
+    color: ${theme.color.white};
     font-weight: 400;
     line-height: 1;
     border-radius: 50%;
@@ -204,12 +204,12 @@ export default function Product(
     let underCardText = 'Чего сидишь? Порадуй котэ, ',
         selector,
         color,
-        typeTextColor = '#666',
+        typeTextColor = theme.color.textDefault,
         typeText = type;
 
     if (isDisabled) {
         color = theme.color.disabled;
-        typeTextColor = '#b3b3b3';
+        typeTextColor = theme.color.disabled;
         underCardText = ['Печалька,', name, 'закончился.'].join(' ');
     }
 

@@ -21,8 +21,8 @@ injectGlobal`
   body {
     display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: flex-start;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -33,7 +33,11 @@ injectGlobal`
     -moz-osx-font-smoothing: grayscale;
     background: 
       linear-gradient(to top, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, .5) 100%),
-      url(${pattern}) repeat;   
+      url(${pattern}) repeat;     
+  }
+  
+  #root {
+    margin: auto;
   }
 `;
 

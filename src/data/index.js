@@ -4,7 +4,11 @@ export const theme = {
         defaultHover: '#2ea8e6',
         selected: '#d91667',
         selectedHover: '#e62e7a',
-        disabled: '#b3b3b3'
+        disabled: '#b3b3b3',
+        black: '#000',
+        white: '#fff',
+        descriptionDisabled: '#ffff66',
+        textDefault: '#666',
     },
     sizes: {
         phone: 0,

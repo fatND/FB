@@ -7,8 +7,9 @@ import { Product } from 'components';
 
 const Block = styled.section`
         width: 100%;
+        margin: auto;
         ${media.tablet`padding: 0 ${rem(24)}`}
-        ${media.desktop`width: ${rem(theme.sizes.desktop)}; margin: 0 auto;`}
+        ${media.desktop`width: ${rem(theme.sizes.desktop)};`}
     `;
 
 const Items = styled.ul`
@@ -26,13 +27,13 @@ const Items = styled.ul`
 const Title = styled.h2`
         padding-top: ${rem(42)};
         margin: 0 0 ${rem(23)};
-        color: #fff;
+        color: ${theme.color.white};
         font-family: "Exo 2.0", sans-serif;
         font-size: ${rem(36)};
         font-weight: 100;
         line-height: 1.1;
         text-align: center;
-        text-shadow: 0 1px 0 #000;
+        text-shadow: 0 1px 0 ${theme.color.black};;
     `;
 
 export default function Products({ state, items, handleMouseEnter, handleMouseLeave, handleClick }) {
